@@ -1,0 +1,11 @@
+python3.8 train.py \
+    --in_data_fn=lang_to_sem_data.json \
+    --model_output_dir=experiments/lstm \
+    --batch_size=100 \
+    --num_epochs=100 \
+    --val_every=5 \
+    --force_cpu \
+    --embedding_dim=32 \
+    --hidden_dim=32 \
+    --vocab_size=1000 \
+    --learning_rate=.01
