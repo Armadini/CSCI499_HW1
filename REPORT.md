@@ -9,7 +9,8 @@ Unfortunately, my computer is very slow so I was unable to train a model on the 
 - Hidden Dimension: This was also not too large as the model was just looking for two pieces of info
 - LSTM: I only had one LSTM layer in order to save training time. I could've stacked multiple on top of each other form additional sequence passes, but I also felt that was uncessecary for this task
 - Linear heads for each prediction: While I coudl've trained two seperate models entirely for each task, I felt that one LSTM was enough to capture info about the action and target of the instruction, and the hidden dimension was also large enough. As such, I only used the final linear layer to decode the final hidden state into two labels
-
+- Batch Size: This was larger for faster computation
+- Cross entropy loss: Performs well on categorical data to my understanding. (one hot vectors)
 
 ### Engineering:
 The data loaders were purposefully split into their own file. This was to allow for more functionality as I created custom Dataset classes. Moreover, within the dataloaders, I added a "debug" option which I have found to be very helpful in past AI projects. This effectively reduced the size of the dataset allowing me to train quickly.
